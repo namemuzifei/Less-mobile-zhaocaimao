@@ -1,0 +1,122 @@
+//引入z.less文件
+@import 'z.less';
+@import 'common.less';
+
+/* 重置样式 */
+.reset();
+
+/* 具体样式 */
+/* 头部区域开始 */
+header{
+    background-color:#fa3432;
+    .font-size(28);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    .height(94);
+    .padding(0,38,0,30);
+    a{
+        color:#fff;
+        .font-size(50) !important;
+    }
+}
+/* 头部区域结束 */
+
+/* 大logo开始 */
+.big_logo{
+    .height(330);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    span{
+        .width(192);
+        .height(192);
+        border:1px dotted red;
+        border-radius:50%;
+        background:url('../images/login_img.png') no-repeat center center;
+        .background-size(192,192);
+    }
+}
+/* 大logo结束 */
+
+/* 表单区域开始 */
+.form{
+    position:relative;
+    p{
+        .padding(0,0,26,38);
+        color:#0e0e0e;
+        .font-size(26);
+    }
+    #tel{
+        .margin(0,0,23,24);
+        .width(700);
+        .height(77);
+        display:block;
+        border:1px solid #eee;
+        .border-radius(10);
+        .padding(0,0,0,69);
+        color:#A2A2A2;
+        .font-size(30);
+    }
+    .iconfont{
+        position:absolute;
+        .width(69);
+        .height(75);
+        .top(61);
+        .left(25);
+        text-align:center;
+        .line-height(75);
+        .font-size(60);
+        color:#cdd6d9;
+    }
+    a{
+        display:block;
+        text-align:center;
+        color:#575757;
+    }
+    .next{
+        .width(692);
+        .height(81);
+        background-color:#fa3432;
+        .margin(0,0,20,29);
+        .font-size(30);
+        color:#fff;
+        .line-height(81);
+        .border-radius(10);
+    }
+    .read{
+        .margin(0,0,178,0);
+    }
+}
+/* 表单区域结束 */
+
+/* 覆盖整个页面的下拉菜单开始----遮罩图 */
+.menu{
+    position:absolute;
+    .top(94);
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,0.5);
+    display:none;
+    ul{
+        border-top:1px solid #d5ada7;
+        .height(130);
+        background-color:#fff;
+        display:flex;
+        align-items:center;
+        li{
+            flex:auto;
+            text-align:center;
+        }
+        li:not(:last-of-type){border-right:1px solid #fa3432;}
+        a{
+            color:#fa3432;
+            .font-size(25);
+            span{
+                display:block;
+            }
+        }
+    }
+}
+/* 覆盖整个页面的下拉菜单结束----遮罩图 */

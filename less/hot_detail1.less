@@ -1,0 +1,200 @@
+//引入z.less文件
+@import 'z.less';
+@import 'common.less';
+
+/* 重置样式 */
+.reset();
+
+/* 具体样式 */
+body{background-color:#fff;}
+/* 头部区域开始 */
+header{
+    background-color:#fa3432;
+    .font-size(40);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    .height(94);
+    .padding(0,38,0,30);
+    a{
+        color:#fff;
+        .font-size(50) !important;
+    }
+}
+/* 头部区域结束 */
+
+/* 产品的获利数据开始 */
+.product_rate{
+    .padding(50,0,0,0);
+    .height(172);
+    background-image:linear-gradient(#ff3c01,#d80607);
+    color:#fff;
+    text-align:center;
+    h3{
+        .font-size(68);
+        .margin(0,0,20,0);
+    }
+    p{.font-size(30);}
+}
+/* 产品的获利数据结束 */
+
+/* 产品限制开始 */
+.product_limit{
+    .height(79px);
+    border-bottom:1px solid #f1f0f0;
+    .font-size(30);
+    color:#777;
+    display:flex;
+    align-items:center;
+    li{
+        flex:1 1 auto;
+        text-align:center;
+        &:first-of-type{
+            border-right:1px solid blue;
+        }
+    } 
+}
+/* 产品限制结束 */
+
+/* 产品支持开始 */
+.product_support{
+    .padding(68,0,0,0);
+    display:flex;
+    ul{
+        margin:auto;
+        .width(640);
+        .height(203);
+        background:url('../images/detail_icon_bg.png') no-repeat center center;
+        color:#ffc166;
+        .font-size(24);
+        
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+        align-items:center;
+        li{
+            span{
+                display:inline-block;
+                .width(55);
+                .height(55);
+                border:1px solid #f5f5f5;
+                border-radius:50%;
+                .line-height(55);
+                text-align:center;
+                .font-size(35);
+            }
+        }
+    }
+}
+/* 产品支持结束 */
+
+/* 投资进度条开始 */
+.progress{
+    .margin(80,38,0,30);
+    position:relative;   
+    div{
+        .width(685);
+        .height(15);
+        background-color:#f0f0f0;
+        .border-radius(10);
+        p{
+            width:0;
+            .height(15);
+            background-color:#fb0502;
+            .border-radius(10);
+             /* 开启过渡动画效果 */
+            transition:width 1s;
+        }
+    }
+    span{
+        position:absolute;
+        .top(-50);
+        .width(60);
+        .height(32);
+        left:0;
+        /* 开启过渡动画效果 */
+        transition:left 1s;
+        transform:translateX(-50%);
+        background-color:#fb0502;
+        color:#fff;
+        .line-height(32);
+        text-align:center;
+        &:after{
+            content:'';
+            position:absolute;
+            .bottom(-20);
+            left:50%;
+            transform:translateX(-50%);
+            .triangle-b(5px,#fb0502);
+        }
+    }
+    ul{
+        .margin(27,0,0,0);
+        display:flex;
+        justify-content:space-between;
+        color:#808080;
+        .font-size(22);
+        em{color:#ff0000;}
+    }
+}
+/* 投资进度条结束 */
+
+/* 页脚按钮开始 */
+.footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    .height(105);
+    background-color:#f0f0f0;
+    border-top:1px solid #e0e0e0;
+    display:flex;
+    align-items:center;
+    .font-size(32);
+    .gains{
+        color:#f90;
+        border-bottom:1px solid #f90;
+        .margin(0,51,0,36);
+    }
+    .btn{
+        .width(517);
+        .height(82);
+        background-color:#fa3432;
+        .border-radius(10);
+        color:#fff;
+        text-align:center;
+        .line-height(82);
+    }
+}
+/* 页脚按钮结束 */
+
+/* 覆盖整个页面的下拉菜单开始----遮罩图 */
+.menu{
+    position:absolute;
+    .top(94);
+    .bottom(105);
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,0.5);
+    display:none;
+    ul{
+        border-top:1px solid #d5ada7;
+        .height(130);
+        background-color:#fff;
+        display:flex;
+        align-items:center;
+        li{
+            flex:auto;
+            text-align:center;
+        }
+        li:not(:last-of-type){border-right:1px solid #fa3432;}
+        a{
+            color:#fa3432;
+            .font-size(25);
+            span{
+                display:block;
+            }
+        }
+    }
+}
+/* 覆盖整个页面的下拉菜单结束----遮罩图 */

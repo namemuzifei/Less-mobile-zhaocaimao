@@ -1,0 +1,263 @@
+/***************************公用工具******************************************/
+/**********************************************************************************
+为根节点html设置字体大小时，为了保证页面大小效果相同，必须保证比例相同：
+即：不同设备的独立像素宽度/基准设备的独立像素宽度  === 不同设备的html字体大小/基准设备的html字体大小
+**********************************************************************************/
+/* 各种设备的根节点的字体大小 */
+body {
+  background-color: #f9f9f9;
+}
+/* 页脚开始 */
+footer {
+  margin: 0.30666667rem 0rem 0rem 0rem;
+  height: 2.2rem;
+  background-color: #fff;
+  border-top: 1px solid #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer div:nth-of-type(1) {
+  font-size: 0.37333333rem;
+}
+footer div:nth-of-type(1) a {
+  color: #494848;
+  margin: 0rem 0.06666667rem 0rem 0.06666667rem;
+}
+footer div:nth-of-type(2) {
+  margin: 0.13333333rem 0rem 0rem 0rem;
+  font-size: 0.34666667rem;
+  color: #9a9b9c;
+}
+/* 页脚结束 */
+/* 重置样式 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, "微软雅黑", sans-serif;
+  color: #222;
+  font-size: 12px;
+}
+body,
+button,
+input,
+select,
+textarea {
+  outline: none;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+textarea {
+  resize: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th {
+  text-align: inherit;
+}
+fieldset,
+img {
+  border: 0;
+}
+img {
+  vertical-align: middle;
+}
+iframe {
+  display: block;
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+menu,
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+ins,
+a,
+a:visited {
+  text-decoration: none;
+  outline: none;
+}
+i {
+  font-style: normal;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+  font-family: "Helvetica Neue", Helvetica, Arial, "微软雅黑", sans-serif;
+}
+/*input[type="checkbox"]{ background:#2460aa; color:#fff; -webkit-text-shadow:none; border-color:#2157db; margin-right:0.08rem; border-radius:2px; -webkit-box-shadow:none;}*/
+/*去除ios浏览器中input button的风格*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  outline: none;
+}
+/*移除html5 input="number"的小箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* 具体样式 */
+/* 头部区域开始 */
+header {
+  background-color: #fa3432;
+  font-size: 0.53333333rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.25333333rem;
+  padding: 0rem 0.50666667rem 0rem 0.4rem;
+}
+header a {
+  color: #fff;
+  font-size: 0.66666667rem !important;
+}
+/* 头部区域结束 */
+/* 文字介绍开始 */
+.article {
+  padding: 0.66666667rem 0.66666667rem 0rem 0.66666667rem;
+  font-size: 0.46666667rem;
+}
+.article h3 {
+  color: #f9514f;
+  font-weight: bold;
+  line-height: 0.66666667rem;
+}
+.article h3 i {
+  display: inline-block;
+  width: 0.68rem;
+  height: 0.68rem;
+  background-color: #fa3432;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0rem 0.26666667rem 0rem 0rem;
+}
+.article p {
+  color: #868484;
+  margin: 0.6rem 0rem 1.06666667rem 0rem;
+}
+/* 文字介绍结束 */
+/* 覆盖整个页面的下拉菜单开始----遮罩图 */
+.menu {
+  position: absolute;
+  top: 1.25333333rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.menu ul {
+  border-top: 1px solid #d5ada7;
+  height: 1.73333333rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.menu ul li {
+  flex: auto;
+  text-align: center;
+}
+.menu ul li:not(:last-of-type) {
+  border-right: 1px solid #fa3432;
+}
+.menu ul a {
+  color: #fa3432;
+  font-size: 0.33333333rem;
+}
+.menu ul a span {
+  display: block;
+}
+/* 覆盖整个页面的下拉菜单结束----遮罩图 */

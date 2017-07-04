@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<meta name="keywords" content="招财猫,招财猫理财,招财猫官网,招财猫app,招财猫金融,招财猫投资">
+		<meta name="description" content="招财猫理财致力于提供互联网金融投资服务，招财猫针对当前投融资现状，专注为个人理财投资者和急需资金的中小企业及个人，打造一个安全、稳定、高流动性网络理财平台。">
+		<!--<link rel="shortcut icon" href="">-->
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/iconfont.css" />
+		
+		<!-- 引入zepto.js文件用于使用toggle切换显示与隐藏 -->
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		
+	</head>
+	<body>
+		<!-- 头部区域开始 -->
+		<header>
+			<a href="javascript:;" class="iconfont icon-fanhui"></a>
+			<a href="javascript:;">验证手机号</a>
+			<a href="javascript:;" class="iconfont icon-caidan" id="btn_menu"></a>
+		</header>
+		<!-- 头部区域结束 -->
+		
+		<!-- 大logo开始 -->
+		<section class="big_logo">
+			<span></span>
+		</section>
+		<!-- 大logo结束 -->
+		
+		<!-- 表单区域开始 -->
+		<form action="" class="form">
+			<p>请输入手机号码</p>
+			<input type="number" name="tel" id="tel" placeholder="请输入手机号码">
+			<span class="iconfont icon-shouji1"></span>
+			<a href="javascript:;" class="next">下一步</a>
+			<a href="" class="read">阅读并同意 《招财猫理财用户使用及隐私协议》</a>
+		</form>
+		<!-- 表单区域结束 -->
+		
+		<!-- 页脚开始 -->
+		<footer>
+			<div>
+				<a href="">触屏版</a>|
+				<a href="">电脑版</a>|
+				<a href="">APP下载</a>
+			</div>
+			<div>©2017招财猫理财 浙ICP备14041616号</div>
+		</footer>
+		<!-- 页脚结束 -->
+		
+		<!-- 覆盖整个页面的下拉菜单开始----遮罩图 -->
+		<section class="menu">
+			<ul>
+				<li>
+					<a href="index.html">
+						<span class="iconfont icon-zhuye"></span>
+						<em>首页</em>
+					</a>
+				</li>
+				<li>
+					<a href="safe.html">
+						<span class="iconfont icon-suo"></span>
+						<em>安全保障</em>
+					</a>
+				</li>
+				<li>
+					<a href="list.html">
+						<span class="iconfont icon-chongzhi"></span>
+						<em>我要投资</em>
+					</a>
+				</li>
+				<li>
+					<a href="login.html">
+						<span class="iconfont icon-wode"></span>
+						<em>账户中心</em>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- 覆盖整个页面的下拉菜单结束----遮罩图 -->
+		
+		
+		<script>
+			//用于表单中，控制输入框中的占位符
+			//当获取焦点时
+			document.querySelector('#tel').addEventListener( 'focus',function(){
+				this.placeholder = '';
+				this.style.color = 'black';
+			} );
+			//当失去焦点时
+			document.querySelector('#tel').addEventListener( 'blur',function(){
+				//判断是由输入框内是否已经有输入值
+				if( this.value == '' ){
+					this.placeholder = '请输入手机号码';
+				}
+			} );
+		</script>
+	</body>
+</html>

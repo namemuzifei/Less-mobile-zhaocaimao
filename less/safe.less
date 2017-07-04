@@ -1,0 +1,98 @@
+//引入z.less文件
+@import 'z.less';
+@import 'common.less';
+
+/* 重置样式 */
+.reset();
+
+/* 具体样式 */
+/* 头部区域开始 */
+header{
+    background-color:#fa3432;
+    .font-size(40);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    .height(94);
+    .padding(0,38,0,30);
+    a{
+        color:#fff;
+        .font-size(50) !important;
+    }
+}
+/* 头部区域结束 */
+
+/* 资金安全开始 */
+.safe{
+    .font-size(25);
+    h3{
+        color:#fbb33e;
+        text-align:center;
+        font-weight:bold;
+        .padding(40,0,55,0);
+        span{
+            border-bottom:1px solid #fbb33e;
+            .padding(0,30,10,30);
+        }
+    }
+    dl{
+        .padding(0,50,70,50);
+        dt{
+            color:#fa3432;
+            .line-height(35);
+            i{
+                display:inline-block;
+                .width(35);
+                .height(35);
+                border-radius:50%;
+                background-color:#fa3432;
+                color:#fff;
+                text-align:center;
+                .margin(0,25,0,0);
+            }
+        }
+        dd{
+            color:#868484;
+            .margin(30,0,30,0);
+        }
+    }
+}
+.safe:not(:nth-of-type(3)) dl{
+        border-bottom:2px dotted #d1d1d1;
+    }
+/* 资金安全结束 */
+
+/* 剩余几个安全板块全部继承使用资金安全的样式 */
+
+
+
+/* 覆盖整个页面的下拉菜单开始----遮罩图 */
+.menu{
+    position:absolute;
+    .top(94);
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,0.5);
+    display:none;
+    ul{
+        border-top:1px solid #d5ada7;
+        .height(130);
+        background-color:#fff;
+        display:flex;
+        align-items:center;
+        li{
+            flex:auto;
+            text-align:center;
+        }
+        li:not(:last-of-type){border-right:1px solid #fa3432;}
+        a{
+            color:#fa3432;
+            .font-size(25);
+            span{
+                display:block;
+            }
+        }
+    }
+}
+/* 覆盖整个页面的下拉菜单结束----遮罩图 */

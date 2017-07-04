@@ -1,0 +1,169 @@
+//引入z.less文件
+@import 'z.less';
+@import 'common.less';
+
+/* 重置样式 */
+.reset();
+
+/* 具体样式 */
+body{
+    height:5000px;
+}
+/* 头部区域开始 */
+header{
+    background-color:#fa3432;
+    .font-size(40);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    .height(94);
+    .padding(0,38,0,30);
+    a{
+        color:#fff;
+        .font-size(50) !important;
+    }
+}
+/* 头部区域结束 */
+
+
+/* 公用的标题样式开始 */
+h3{
+    color:#525151;
+    .font-size(35);
+    .margin(50,0,45,0);
+    text-align:center;
+    span{
+        .padding(0,20,20,20);
+        border-bottom:3px solid #fdb870;
+    }
+}
+/* 公用的标题样式结束 */
+
+/* 文字主体开始 */
+.article{
+    color:#868484;
+    .font-size(28);
+    .padding(0,0,0,30);
+    /* 公司简介开始 */
+    .company_info{
+        .padding(0,80,0,0);
+        P{
+            .padding(0,0,55,0);
+            .line-height(35);
+            text-indent:2em;
+        }
+    }
+    /* 公司简介结束 */
+    
+    /* 发展历程开始 */
+    .develop_progress{
+        ul{
+            .padding(15,0,0,0);
+            li{
+                display:flex;
+                align-items:center;
+                .padding(0,0,65,0);
+                position:relative;
+                i{
+                    .width(10);
+                    .height(10);
+                    background-color:#ff982b;
+                    border-radius:50%;
+                    .margin(0,10,0,10);
+                }
+            }
+            li:not(:last-of-type){
+                em{
+                    position:absolute;
+                    top:18%;
+                    .left(118);
+                    .width(3);
+                    height:100%;
+                     background-color:#ff982b;
+                }
+            }
+        }
+        
+    }
+    /* 发展历程结束 */
+}
+/* 文字主体结束 */
+
+/* 轮播图开始 */
+.lunbo{
+    position: relative;
+    .swipe {
+        .margin(50,0,50,0);
+        margin-left:auto;
+        margin-right:auto;
+        overflow: hidden;
+        position: relative;
+        width:80%;
+        /* 大图  */
+        .swipe-wrap {
+          overflow: hidden;
+          position: relative;
+        }
+        .swipe-wrap > div {
+          float:left;
+          width:100%;
+          position: relative;
+          text-align:center;
+          img{
+            width:100%;
+            vertical-align:middle;
+            }
+        }
+    }
+    /* 左右按钮 */
+   span{
+       position:absolute;
+       z-index:10;
+       .width(50);
+       .height(100);
+       background-color:black;
+       top:50%;
+       transform:translateY(-50%);
+       .font-size(50);
+        color:#fff;
+       font-weight:bold;
+       text-align:center;
+       .line-height(100);
+   }
+   span:last-of-type{
+       right:0;
+   }
+}
+
+/* 轮播图结束 */
+
+/* 覆盖整个页面的下拉菜单开始----遮罩图 */
+.menu{
+    position:absolute;
+    .top(94);
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,0.5);
+    display:none;
+    ul{
+        border-top:1px solid #d5ada7;
+        .height(130);
+        background-color:#fff;
+        display:flex;
+        align-items:center;
+        li{
+            flex:auto;
+            text-align:center;
+        }
+        li:not(:last-of-type){border-right:1px solid #fa3432;}
+        a{
+            color:#fa3432;
+            .font-size(25);
+            span{
+                display:block;
+            }
+        }
+    }
+}
+/* 覆盖整个页面的下拉菜单结束----遮罩图 */

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>赚钱计划8888号2期详情页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<meta name="keywords" content="招财猫,招财猫理财,招财猫官网,招财猫app,招财猫金融,招财猫投资">
+		<meta name="description" content="招财猫理财致力于提供互联网金融投资服务，招财猫针对当前投融资现状，专注为个人理财投资者和急需资金的中小企业及个人，打造一个安全、稳定、高流动性网络理财平台。">
+		<!--<link rel="shortcut icon" href="">-->
+		<link rel="stylesheet" href="css/hot_detail1.css">
+		<link rel="stylesheet" href="css/iconfont.css" />
+		
+		<!-- 引入zepto.js文件用于使用toggle切换显示与隐藏 -->
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		
+	</head>
+	<body>
+		<!-- 头部区域开始 -->
+		<header>
+			<a href="javascript:;" class="iconfont icon-fanhui"></a>
+			<a href="javascript:;">赚钱计划8888号2期</a>
+			<a href="javascript:;" class="iconfont icon-caidan" id="btn_menu"></a>
+		</header>
+		<!-- 头部区域结束 -->
+		
+		<!-- 产品的获利数据开始 -->
+		<section class="product_rate">
+			<h3>9.2%+0.5%</h3>
+			<p>9.7% （9.2%+活动加息0.5%）</p>
+		</section>
+		<!-- 产品的获利数据开始 -->
+		
+		<!-- 产品限制开始 -->
+		<ul class="product_limit">
+			<li>1000元起投</li>
+			<li>期限180天</li>
+		</ul>
+		<!-- 产品限制结束 -->
+		
+		<!-- 产品支持开始 -->
+		<section class="product_support">
+			<ul>
+				<li><span class="iconfont icon-lock-fill"></span>省级律所法律支持</li>
+				<li><span class="iconfont icon-women"></span>浙大友创战略入股</li>
+				<li><span class="iconfont icon-renzheng"></span>招财猫易贷严风控</li>
+				<li><span class="iconfont icon-chongzhi"></span>千万级风险保障金</li>
+			</ul>
+		</section>
+		<!-- 产品支持结束 -->
+		
+		<!-- 投资进度条开始 -->
+		<section class="progress">
+			<div data-value="50" class="progress_container">
+				<p></p>
+			</div>
+			<span><i>0%</i></span>
+			<ul>
+				<li>已投资<em>37</em>人>></li>
+				<li>剩余可投<em>623000</em>元</li>
+			</ul>
+		</section>
+		<!-- 投资进度条结束 -->
+		
+		<!-- 页脚按钮开始 -->
+		<section class="footer">
+			<a href="" class="gains">收益估算</a>
+			<a href="list.html" class="btn">立即投资</a>
+		</section>
+		<!-- 页脚按钮结束 -->
+		
+		<!-- 覆盖整个页面的下拉菜单开始----遮罩图 -->
+		<section class="menu">
+			<ul>
+				<li>
+					<a href="index.html">
+						<span class="iconfont icon-zhuye"></span>
+						<em>首页</em>
+					</a>
+				</li>
+				<li>
+					<a href="safe.html">
+						<span class="iconfont icon-suo"></span>
+						<em>安全保障</em>
+					</a>
+				</li>
+				<li>
+					<a href="list.html">
+						<span class="iconfont icon-chongzhi"></span>
+						<em>我要投资</em>
+					</a>
+				</li>
+				<li>
+					<a href="login.html">
+						<span class="iconfont icon-wode"></span>
+						<em>账户中心</em>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- 覆盖整个页面的下拉菜单结束----遮罩图 -->
+		
+		<script>
+			//由于为common.js中的设置根节点字体大小设置了页面预加载事件，为了使下面的js代码在common.js之后运行，需要加上页面预加载事件
+			window.addEventListener( 'load',function(){
+				//进度条
+				//获取进度条容器dom元素中
+				var progressContainer = document.querySelector( '.progress_container' ),
+				//获取进度条容器dom元素中的自定义属性--进度值
+					progressValue 	  = progressContainer.dataset.value,
+				//获取进度条容器dom元素的总宽度
+					totalWidth 		  = progressContainer.offsetWidth,
+					
+				//获取进度条容器中的进度显示主体
+					progressBody      = progressContainer.querySelector('p'),
+				//获取游标
+					progressFlag 	  = document.querySelector('.progress').querySelector('span');
+				//获取游标中的文本
+					progressFlag_txt 	  = progressFlag.querySelector('i');
+				//显示游标中的进度值的变化过程
+					currentValue 	  = 0;
+					
+				//为进度条容器中的进度显示主体设置宽度
+				progressBody.style.width = progressValue/100 * totalWidth + 'px' ;
+				progressFlag.style.left = progressValue + '%';
+				
+				//显示游标中进度值的变化过程
+				var timer = setInterval(function(){
+					currentValue++;
+//					console.log(progressValue);
+					if( currentValue >= progressValue ){   //当游标的当前进度值到达设置的进度值时
+						//停止定时器
+						clearInterval(timer);
+						currentValue = progressValue;
+						progressFlag_txt.innerHTML = progressValue +'%';
+
+					}else{
+						progressFlag_txt.innerHTML = currentValue +'%';
+					}
+				},20);
+			} );
+		</script>
+		
+	</body>
+</html>

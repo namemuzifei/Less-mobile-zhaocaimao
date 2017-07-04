@@ -1,0 +1,96 @@
+//公用的less
+
+/***************************公用工具******************************************/
+@font-size:75px;
+/**********************************************************************************
+为根节点html设置字体大小时，为了保证页面大小效果相同，必须保证比例相同：
+即：不同设备的独立像素宽度/基准设备的独立像素宽度  === 不同设备的html字体大小/基准设备的html字体大小
+**********************************************************************************/
+
+//每1px转化为多少rem
+//方法一
+//属性名确定时
+@rem:(1/@font-size)*1rem;
+
+//方法二
+//针对不同的属性名，可以使用@{name}设置不同的属性名
+.rem( @name,@value ){
+    @{name}:@value/@font-size*1rem;
+}
+
+//宽
+.width(@value){.rem(width,@value);}
+//高
+.height(@value){.rem(height,@value);}
+//行高
+.line-height(@value){
+    .rem(line-height,@value);
+}
+
+//字体大小
+.font-size(@value){.rem(font-size,@value);}
+//内边距
+.padding(@top,@right,@bottom,@left){
+    padding:@top*@rem @right*@rem @bottom*@rem @left*@rem;
+}
+//外边距
+.margin(@top,@right,@bottom,@left){
+    margin:@top*@rem @right*@rem @bottom*@rem @left*@rem;
+}
+//尺寸大小
+.background-size(@value1,@value2){
+    background-size:@value1*@rem @value2*@rem;
+}
+
+//上
+.top(@value){
+    .rem(top,@value);
+}
+
+//右
+.right(@value){
+    .rem(right,@value);
+}
+
+//下
+.bottom(@value){
+    .rem(bottom,@value);
+}
+//左
+.left(@value){
+    .rem(left,@value);
+}
+
+//圆角
+.border-radius(@value){
+    .rem(border-radius,@value);
+}
+/* 各种设备的根节点的字体大小 */
+body{
+    background-color:#f9f9f9;
+}
+
+/* 页脚开始 */
+footer{
+    .margin(23,0,0,0);
+    .height(165);
+    background-color:#fff;
+    border-top:1px solid #d9d9d9;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    div:nth-of-type(1){
+        .font-size(28);
+        a{
+            color:#494848;
+            .margin(0,5,0,5);
+        }
+    }
+    div:nth-of-type(2){
+        .margin(10,0,0,0);
+        .font-size(26);
+        color:#9a9b9c;
+    }
+}
+/* 页脚结束 */
